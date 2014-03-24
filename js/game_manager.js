@@ -54,12 +54,12 @@ GameManager.prototype.setup = function () {
     this.won         = false;
     this.keepPlaying = false;
 
-    // Localize page elements
-    this.localizeElements();
-
     // Add the initial tiles
     this.addStartTiles();
   }
+
+  // Localize page elements
+  this.localizeElements();
 
   // Update the actuator
   this.actuate();
