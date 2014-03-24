@@ -54,12 +54,28 @@ GameManager.prototype.setup = function () {
     this.won         = false;
     this.keepPlaying = false;
 
+    // Localize page elements
+    this.localizeElements();
+
     // Add the initial tiles
     this.addStartTiles();
   }
 
   // Update the actuator
   this.actuate();
+};
+
+// Passive localization of page elements
+GameManager.prototype.localizeElements = function () {
+    var elementArray = [
+        'game-intro',
+        'restart-button',
+        'retry-button',
+        'keep-playing-button'
+    ];
+    for (var i in elementArray) {
+        LocalizeElement(elementArray[i]);
+    };
 };
 
 // Set up the initial tiles to start the game with
